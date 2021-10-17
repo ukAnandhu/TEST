@@ -8,7 +8,7 @@ function TodoList({text, todo, todos, setTodo}) {
     return (
         <div className="list">
             <div className="list-items">
-                <li className="list__values">{text}</li>  
+                <li className="list__values">{text}</li> 
                 <button className="list__button" onClick={deleteHandler}>delete</button>
             </div>
         </div>

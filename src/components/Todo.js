@@ -39,10 +39,14 @@ function Todo({input, setInput, todo, setTodo}) {
                     <button onClick={clickHandler}  className="Todo__button">+</button>
                 </div>
                
-               <div className="Todo__items">{todo.map((todos, index) => (<TodoList key={index} 
+                <div className="Todo__items">{/*{todo.map((todos, index) => (<TodoList key={index} 
                     setTodo={setTodo} todos={todos} 
                     todo={todo} text={todos.text} id={todos.id} />
-               )) } 
+               )) }  */}
+                  <TodoList text="Buy a New Gaming Laptop" />
+                  <TodoList text="Complete a previos task" />
+                  <TodoList text="Create a video on YouTube" />
+                  <TodoList text="Create a new portfolio site" />
                </div> 
                 
                

@@ -6,7 +6,7 @@
     padding-left: 10px;
     border-radius: 5px;
     position: relative;
-
+    
     &-items {
         height: 100%;
         display: flex;
@@ -23,6 +23,7 @@
         list-style: none
       
     }
+   
    &__button {     
       position: absolute;
       right: -65px;
