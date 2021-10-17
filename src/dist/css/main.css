@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+}
+
+.Todo {
+  width: 100%;
+  background-color: cadetblue;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Todo-container {
+  width: 35%;
+  height: 80%;
+  background-color: #fff;
+  padding: 30px 50px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.Todo__heading {
+  font-size: 30px;
+  font-family: 'source sans pro';
+}
+
+.Todo__input {
+  display: flex;
+  margin-top: 20px;
+}
+
+.Todo__input--value {
+  width: 90%;
+  height: 40px;
+  padding-left: 15px;
+}
+
+.Todo__input--value::placeholder {
+  color: black;
+  font-size: 15px;
+}
+
+.Todo__button {
+  margin-left: 7px;
+  width: 10%;
+  border: none;
+  border-radius: 5px;
+  background-color: #a716a7;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.Todo__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  height: 50px;
+}
+
+.Todo__footer--header {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.Todo__footer--button {
+  height: 70%;
+  width: 17%;
+  background-color: #8b198b;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 14px;
+}
+
+.Todo__items {
+  width: 100%;
+  max-height: 330px;
+  overflow: hidden;
+}
+
+.list {
+  width: 100%;
+  height: 55px;
+  margin-top: 25px;
+  background-color: #dddddd;
+  padding-left: 10px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.list-items {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+}
+
+.list__values {
+  width: 100%;
+  font-size: 18px;
+  overflow: hidden;
+  cursor: default;
+  list-style: none;
+}
+
+.list__button {
+  position: absolute;
+  right: -65px;
+  height: 100%;
+  width: 15%;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.3sec ease;
+  cursor: pointer;
+}
+
+.list__values:hover + .list__button {
+  right: 0px;
+}
+/*# sourceMappingURL=main.css.map */
