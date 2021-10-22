@@ -2,25 +2,28 @@ import React from 'react'
 import TodoList from './TodoList'
 
 function Todo({input, setInput, todo, setTodo}) {
-   
+    
     const inputHandler = (e) => {
         //console.log(e.target.value);
         setInput(e.target.value);
     }
    
      const clickHandler = (e) => {
+       // setTodo([])
         e.preventDefault();
         //console.log(input);
         if (input === '') return
         //console.log(e);
         setTodo([
-            ...todo,
-            {text: input, completed:false, id: Math.random() * 1000}
+            ...todo, input
+            //{text: input, completed:false, id: Math.random() * 1000}
         ])
         setInput("");
     } 
-    const deleteAll = () => {
-        setTodo(todo.filter((el) => el.id === todo.id))
+    const deleteAll = (index) => {
+        //console.log(index)
+        setTodo((state) =>  state.filter((item) => item === state[index]))
+        //setTodo(todo.filter((el) => el.id === todo.id))
     }
    
     return (
@@ -39,17 +42,18 @@ function Todo({input, setInput, todo, setTodo}) {
                     <button onClick={clickHandler}  className="Todo__button">+</button>
                 </div>
                
-                <div className="Todo__items">{todo.map((todos, index) => (<TodoList key={index} 
-                    setTodo={setTodo} todos={todos} 
-                    todo={todo} text={todos.text} id={todos.id} />
-               )) } 
-               
+                <div className="Todo__items">{
+                    todo.map((item, index) => (<TodoList key={index} 
+                    setTodo={setTodo} 
+                    text={item} index={index}  />
+                      )) } 
+                </div> 
 
                  {/* <TodoList text="Buy a New Gaming Laptop" />
                   <TodoList text="Complete a previos task" />
                   <TodoList text="Create a video on YouTube" />
                   <TodoList text="Create a new portfolio site" /> */}
-               </div> 
+               
                  
                
                <div className="Todo__footer">
