@@ -6,13 +6,21 @@
     padding-left: 10px;
     border-radius: 5px;
     position: relative;
-    
+    @media (max-width: '900px') {
+       height: 40px;
+       margin-top: 18px;
+       
+    }
     &-items {
         height: 100%;
         display: flex;
         align-items: center;
         position: relative;
         justify-content: space-between;
+        @media (max-width: '900px') {
+          height: 100%;
+          align-items: center;
+        }
         }
        
     &__values {
@@ -20,8 +28,11 @@
         font-size: 18px;
         overflow: hidden;
         cursor: default;
-        list-style: none
-      
+        list-style: none;
+        @media (max-width: '900px') {
+           font-size: 16px;
+           font-weight: 500;
+        }
     }
    
    &__button {     
@@ -38,8 +49,17 @@
       border: none;
       transition: all 0.3sec ease;
       cursor: pointer; 
+      @media (max-width: '900px') {
+         width: 17%;
+      }
+     
   }
- 
+  &__delete {
+    font-size: 27px;
+    @media (max-width: '900px') {
+         font-size: 20px;
+    }
+  }
   &__values:hover + &__button {
     right: 0px;
   }

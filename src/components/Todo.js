@@ -4,12 +4,15 @@ import TodoList from './TodoList'
 function Todo({input, setInput, todo, setTodo}) {
     
     const inputHandler = (e) => {
-        //console.log(e.target.value);
+         
+        //console.log(e.target.value); 
         setInput(e.target.value);
+        e.target.value.key === 'Enter' && clickHandler()
+        
     }
-   
      const clickHandler = (e) => {
-       // setTodo([])
+     // console.log(e, 'd');
+        
         e.preventDefault();
         //console.log(input);
         if (input === '') return
@@ -30,17 +33,18 @@ function Todo({input, setInput, todo, setTodo}) {
         <div className="Todo">
             <div className="Todo-container">
                 <h2 className="Todo__heading">Todo App</h2>
-                <div className="Todo__input">
+                <form className="Todo__input">
 
                     <input type="text"
                        required
                        onChange={inputHandler}
+                      // onKeyDown={(el) => el.key === 'Enter' && clickHandler(el)}
                        value={input}
                        className="Todo__input--value"
                        placeholder="Add your new Todo"
                     />
                     <button onClick={clickHandler}  className="Todo__button">+</button>
-                </div>
+                </form>
                
                 <div className="Todo__items">{
                     todo.map((item, index) => (<TodoList key={index} 
@@ -48,14 +52,6 @@ function Todo({input, setInput, todo, setTodo}) {
                     text={item} index={index}  />
                       )) } 
                 </div> 
-
-                 {/* <TodoList text="Buy a New Gaming Laptop" />
-                  <TodoList text="Complete a previos task" />
-                  <TodoList text="Create a video on YouTube" />
-                  <TodoList text="Create a new portfolio site" /> */}
-               
-                 
-               
                <div className="Todo__footer">
                     <p className="Todo__footer--header">You have {todo.length} pending tasks</p>
                     <button onClick={deleteAll} className="Todo__footer--button">Clear All</button>
